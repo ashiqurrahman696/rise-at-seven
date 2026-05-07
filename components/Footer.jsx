@@ -2,6 +2,10 @@
 
 import { useState } from 'react';
 import Logo from './Logo';
+import { FaFacebookF, FaInstagram, FaLinkedinIn, FaTiktok, FaXTwitter, FaYoutube } from 'react-icons/fa6';
+import { LuArrowRight } from 'react-icons/lu';
+import { GoDotFill } from 'react-icons/go';
+import { RxArrowTopRight } from "react-icons/rx";
 
 export default function Footer() {
     const [email, setEmail] = useState('');
@@ -12,14 +16,47 @@ export default function Footer() {
         setEmail('');
     };
 
+    const socialIcons = [
+        {
+            id: 1,
+            icon: <FaFacebookF />,
+            link: "https://www.facebook.com/riseatseven",
+        },
+        {
+            id: 2,
+            icon: <FaXTwitter />,
+            link: "https://x.com/riseatseven",
+        },
+        {
+            id: 3,
+            icon: <FaLinkedinIn />,
+            link: "https://www.linkedin.com/company/riseatseven/",
+        },
+        {
+            id: 4,
+            icon: <FaYoutube />,
+            link: "https://www.youtube.com/channel/UCAjOP9BgpZPTgae-QT9HGCw",
+        },
+        {
+            id: 5,
+            icon: <FaTiktok />,
+            link: "https://www.tiktok.com/@riseatseven",
+        },
+        {
+            id: 6,
+            icon: <FaInstagram />,
+            link: "https://www.instagram.com/riseatseven/",
+        },
+    ];
+
     return (
-        <footer className="bg-black text-white/80 pt-20 pb-12">
+        <footer className="bg-black text-white pt-20 pb-12">
             <div className="max-w-screen-2xl mx-auto px-8">
                 {/* Newsletter + Links */}
-                <div className="grid md:grid-cols-12 gap-y-16">
+                <div className="grid lg:grid-cols-12 gap-y-16">
                     {/* Newsletter */}
-                    <div className="md:col-span-5">
-                        <h3 className="text-2xl font-semibold mb-6">Stay updated with Rise news</h3>
+                    <div className="lg:col-span-5">
+                        <h3 className="text-3xl font-semibold mb-6">Stay updated with Rise news</h3>
 
                         <form onSubmit={handleSubmit} className="relative max-w-md mb-8">
                             <input
@@ -31,32 +68,32 @@ export default function Footer() {
                             />
                             <button
                                 type="submit"
-                                className="absolute right-2 top-1/2 -translate-y-1/2 w-10 h-10 bg-[#a3f7a3] hover:bg-[#8ff58f] text-black rounded-full flex items-center justify-center transition-all active:scale-95"
+                                className="absolute right-2 top-1/2 -translate-y-1/2 w-10 h-10 bg-[#b2f6e3] hover:bg-white text-black rounded-full flex items-center justify-center transition-all active:scale-95 -rotate-45 hover:rotate-45"
                             >
-                                →
+                                <LuArrowRight />
                             </button>
                         </form>
 
                         {/* Social Icons */}
                         <div className="flex gap-3">
-                            {['f', '𝕏', 'in', '▶', '♪', '📷'].map((icon, i) => (
+                            {socialIcons.map((icon) => (
                                 <a
-                                    key={i}
-                                    href="#"
-                                    className="w-9 h-9 border border-white/20 hover:border-white/50 rounded-full flex items-center justify-center text-sm transition hover:bg-white/5"
+                                    key={icon.id}
+                                    href={icon.link}
+                                    className="bg-white text-black rounded-full flex items-center justify-center text-sm p-1 transition-all hover:rounded"
                                 >
-                                    {icon}
+                                    {icon.icon} <RxArrowTopRight />
                                 </a>
                             ))}
                         </div>
                     </div>
 
                     {/* Navigation Columns */}
-                    <div className="md:col-span-7 grid grid-cols-2 md:grid-cols-3 gap-10">
+                    <div className="lg:col-span-7 grid grid-cols-2 md:grid-cols-3 gap-10">
                         {/* Column 1 */}
                         <div>
-                            <div className="uppercase text-xs tracking-widest mb-6 text-white">Services</div>
-                            <ul className="space-y-3 text-[15px]">
+                            <ul className="text-2xl font-semibold border-l pl-2 border-white/10">
+                                <li><a href="#" className="hover:text-white transition">Services</a></li>
                                 <li><a href="#" className="hover:text-white transition">Work</a></li>
                                 <li><a href="#" className="hover:text-white transition">About</a></li>
                                 <li><a href="#" className="hover:text-white transition">Culture</a></li>
@@ -66,24 +103,22 @@ export default function Footer() {
 
                         {/* Column 2 */}
                         <div>
-                            <div className="uppercase text-xs tracking-widest mb-6 text-white">Company</div>
-                            <ul className="space-y-3 text-[15px]">
-                                <li><a href="#" className="hover:text-white transition">Testimonials</a></li>
-                                <li><a href="#" className="hover:text-white transition">Blog</a></li>
-                                <li><a href="#" className="hover:text-white transition">Webinars</a></li>
-                                <li><a href="#" className="hover:text-white transition">Careers</a></li>
+                            <ul className="text-2xl font-semibold border-l pl-2 border-white/10">
+                                <li><a href="#">Testimonials</a></li>
+                                <li><a href="#" >Blog & Resources</a></li>
+                                <li><a href="#">Webinars</a></li>
+                                <li><a href="#" >Careers</a></li>
                             </ul>
                         </div>
 
                         {/* Column 3 */}
                         <div>
-                            <div className="uppercase text-xs tracking-widest mb-6 text-white">Offices</div>
-                            <ul className="space-y-3 text-[15px]">
-                                <li>Sheffield</li>
-                                <li>Manchester</li>
-                                <li>London</li>
-                                <li>New York</li>
-                                <li><a href="#" className="hover:text-white transition">Contact</a></li>
+                            <ul className="text-2xl font-semibold border-l pl-2 border-white/10">
+                                <li><a href="#">Sheffield</a></li>
+                                <li><a href="#">Manchester</a></li>
+                                <li><a href="#">London</a></li>
+                                <li><a href="#">New York</a></li>
+                                <li><a href="#">Contact</a></li>
                             </ul>
                         </div>
                     </div>
@@ -97,19 +132,20 @@ export default function Footer() {
                 </div>
 
                 {/* Bottom Bar */}
-                <div className="pt-8 border-t border-white/10 text-xs flex flex-col md:flex-row justify-between items-center gap-4 text-white/60">
-                    <div className="flex flex-wrap gap-x-6 gap-y-2">
+                <div className="pt-8 border-t border-white/10 text-xs flex flex-col md:flex-row justify-between items-center gap-4">
+                    <div className="flex flex-wrap gap-x-3 gap-y-2">
                         <span>© {new Date().getFullYear()} Rise at Seven Ltd. All rights reserved.</span>
+                        <GoDotFill />
                         <span>Company Number 11955187</span>
+                        <GoDotFill />
                         <span>VAT Registered GB 322402945</span>
-                    </div>
-
-                    <div className="flex flex-wrap gap-x-6 gap-y-2">
+                        <GoDotFill />
                         <a href="#" className="hover:text-white transition">Privacy Policy</a>
+                        <GoDotFill />
                         <a href="#" className="hover:text-white transition">Terms &amp; conditions</a>
                     </div>
 
-                    <div className="text-white/40 text-[10px]">Website Made By Shape</div>
+                    <div className="text-[10px]">Website Made By Shape</div>
                 </div>
             </div>
         </footer>
