@@ -13,6 +13,7 @@ import TheAgencyBehind from '@/components/TheAgencyBehind';
 import DrivingDemand from '@/components/DrivingDemand';
 import Services from '@/components/Services';
 import WhatsNew from '@/components/WhatsNew';
+import AnnouncementBar from '@/components/AnnouncementBar';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -50,6 +51,7 @@ export default function Home() {
 
   return (
     <>
+      <AnnouncementBar />
       <Navbar />
       <Hero />
       <TheAgencyBehind />
