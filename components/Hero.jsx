@@ -37,13 +37,13 @@ export default function Hero() {
     return (
         <section
             ref={ref}
-            className="relative min-h-screen flex items-center bg-black text-white overflow-hidden"
+            className="relative min-h-screen flex items-center text-white overflow-hidden"
         >
             {/* Background Image */}
             <div className="absolute inset-0 bg-cover bg-center opacity-60" style={{
                 backgroundImage: `url('${randomBg}')`
             }} />
-            <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/70 to-black" />
+            <div className="absolute inset-0 backdrop-blur-lg" />
 
             <div className="relative z-10 max-w-screen w-full mx-auto pt-32 pb-20 px-8">
                 {/* Award Line */}
@@ -90,21 +90,21 @@ export default function Hero() {
                         </h1>
                     </div>
 
-                    <p className="text-3xl md:text-4xl mt-4 text-white/90 text-center">
+                    <p className="text-3xl md:text-4xl mt-4 text-center">
                         on every searchable platform
                     </p>
                 </div>
 
                 {/* Bottom Content */}
                 <div className="mt-20 flex justify-between flex-wrap gap-12">
-                    <div className="max-w-md text-white/80">
+                    <div className="max-w-md ">
                         Organic media planners creating, distributing &amp; optimising
                         <span className="text-white"> search-first content</span> for SEO, Social, PR, Ai and LLM search
                     </div>
 
-                    <div className="text-white/80">
+                    <div>
                         4 Global Offices serving<br />
-                        <span className="text-white">UK, USA (New York) &amp; EU</span>
+                        <span>UK, USA (New York) &amp; EU</span>
                     </div>
                 </div>
             </div>
