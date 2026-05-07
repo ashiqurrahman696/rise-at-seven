@@ -37,15 +37,15 @@ export default function Hero() {
     return (
         <section
             ref={ref}
-            className="relative min-h-screen flex items-center text-white overflow-hidden"
+            className="relative flex items-center text-white overflow-hidden"
         >
             {/* Background Image */}
-            <div className="absolute inset-0 bg-cover bg-center opacity-60" style={{
+            <div className="absolute inset-0 bg-cover bg-center opacity-80" style={{
                 backgroundImage: `url('${randomBg}')`
             }} />
             <div className="absolute inset-0 backdrop-blur-lg" />
 
-            <div className="relative z-10 max-w-screen w-full mx-auto pt-32 pb-20 px-8">
+            <div className="relative z-10 max-w-screen w-full mx-auto p-8">
                 {/* Award Line */}
                 <div className="text-center text-xs uppercase tracking-widest mb-8">
                     <div>#1 MOST RECOMMENDED</div>
@@ -66,18 +66,18 @@ export default function Hero() {
                 </div>
 
                 {/* Main Headline */}
-                <div className="text-center">
-                    <h1 className="text-[6.5rem] md:text-[9rem] leading-[0.92] font-bold tracking-tighter hero-text">
+                <div className="text-center text-[6rem] md:text-[8rem] font-semibold">
+                    <h1 className="leading-[0.92] tracking-tighter hero-text">
                         We Create
                     </h1>
 
                     <div className="flex items-center justify-center gap-6 mt-10 flex-wrap hero-text">
-                        <h1 className="text-7xl leading-[0.92] font-bold tracking-tighter">
+                        <h1 className="leading-[0.92] tracking-tighter">
                             Category
                         </h1>
 
                         {/* Embedded Image */}
-                        <div className="size-20 rounded-2xl overflow-hidden border-4 border-white/90 shadow-2xl -mt-6">
+                        <div className="size-28 rounded-2xl overflow-hidden shadow-2xl -mt-6">
                             <img
                                 src={randomBg}
                                 alt="Category Leaders"
@@ -85,12 +85,12 @@ export default function Hero() {
                             />
                         </div>
 
-                        <h1 className="text-7xl leading-[0.92] font-bold tracking-tighter">
+                        <h1 className="leading-[0.92] tracking-tighter">
                             Leaders
                         </h1>
                     </div>
 
-                    <p className="text-3xl md:text-4xl mt-4 text-center">
+                    <p className="text-3xl md:text-4xl mt-4 text-center font-semibold">
                         on every searchable platform
                     </p>
                 </div>
