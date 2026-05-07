@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { gsap } from 'gsap';
 import { LuCircleChevronDown, LuCircleChevronUp, LuPlus } from 'react-icons/lu';
 import { FaBars, FaXmark } from 'react-icons/fa6';
+import Logo from './Logo';
 
 const navLinks = [
     { label: 'Services', hasDropdown: true },
@@ -34,8 +35,8 @@ export default function Navbar() {
             <div className="max-w-screen-2xl mx-auto px-8 py-5 flex items-center justify-between">
                 {/* Logo */}
                 <div className="flex items-center gap-1">
-                    <Link href="/" className="text-2xl font-bold tracking-tighter text-white">
-                        Rise at Seven
+                    <Link href="/" className="h-5">
+                        <Logo />
                     </Link>
                     <sup className="text-lg -ml-1">®</sup>
                 </div>
