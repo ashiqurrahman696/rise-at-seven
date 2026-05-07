@@ -23,7 +23,7 @@ export default function TheAgencyBehind() {
             <div className="max-w-screen-2xl mx-auto px-8">
                 <div className="flex items-center p-3 gap-5">
                     <p className="px-3 py-2">The Agency Behind...</p>
-                    <Marquee pauseOnHover={true} speed={50}>
+                    <Marquee pauseOnHover={false} speed={50}>
                         {clients.map((client, i) => <img key={i} src={client.logo} alt={client.name} className="h-10 mx-20" title={client.name} />)}
                     </Marquee>
                 </div>

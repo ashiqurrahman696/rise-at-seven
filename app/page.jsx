@@ -14,6 +14,7 @@ import DrivingDemand from '@/components/DrivingDemand';
 import Services from '@/components/Services';
 import WhatsNew from '@/components/WhatsNew';
 import AnnouncementBar from '@/components/AnnouncementBar';
+import ChasingConsumers from '@/components/ChasingConsumers';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -58,6 +59,7 @@ export default function Home() {
       <DrivingDemand />
       <FeaturedWork />
       <Services />
+      <ChasingConsumers />
       <LegacyInTheMaking />
       <WhatsNew />
       <Footer />
