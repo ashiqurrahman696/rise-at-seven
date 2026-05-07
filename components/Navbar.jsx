@@ -2,7 +2,8 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { gsap } from 'gsap';
-import Logo from './Logo';
+import { LuCircleChevronDown, LuCircleChevronUp, LuPlus } from 'react-icons/lu';
+import { FaBars, FaXmark } from 'react-icons/fa6';
 
 const navLinks = [
     { label: 'Services', hasDropdown: true },
@@ -18,19 +19,25 @@ const navLinks = [
 export default function Navbar() {
     const [activeDropdown, setActiveDropdown] = useState(null);
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+    const [mobileDropdown, setMobileDropdown] = useState(null);
 
-    const toggleDropdown = (label) => {
+    const toggleDesktopDropdown = (label) => {
         setActiveDropdown(activeDropdown === label ? null : label);
     };
 
+    const toggleMobileDropdown = (label) => {
+        setMobileDropdown(mobileDropdown === label ? null : label);
+    };
+
     return (
-        <nav className="sticky top-0 left-0 right-0 z-50 bg-black/90 backdrop-blur-lg border-b border-white/10">
+        <nav className="sticky top-0 left-0 right-0 z-50 bg-black/95 backdrop-blur-lg border-b border-white/10">
             <div className="max-w-screen-2xl mx-auto px-8 py-5 flex items-center justify-between">
                 {/* Logo */}
                 <div className="flex items-center gap-1">
-                    <Link href="/" className="h-5">
-                        <Logo />
+                    <Link href="/" className="text-2xl font-bold tracking-tighter text-white">
+                        Rise at Seven
                     </Link>
+                    <sup className="text-lg -ml-1">®</sup>
                 </div>
 
                 {/* Desktop Navigation */}
@@ -43,18 +50,17 @@ export default function Navbar() {
                             onMouseLeave={() => item.hasDropdown && setActiveDropdown(null)}
                         >
                             <button
-                                onClick={() => item.hasDropdown && toggleDropdown(item.label)}
+                                onClick={() => item.hasDropdown && toggleDesktopDropdown(item.label)}
                                 className="flex items-center gap-1 hover:text-white/70 transition py-2"
                             >
                                 {item.label}
-                                {item.hasDropdown && <span className="text-xs">＋</span>}
+                                {item.hasDropdown && <LuPlus />}
                             </button>
 
-                            {/* Dropdown Menu */}
+                            {/* Desktop Dropdown */}
                             {item.hasDropdown && activeDropdown === item.label && (
-                                <div className="absolute top-full left-0 pt-4 w-64">
+                                <div className="absolute top-full left-0 pt-4 w-64 z-50">
                                     <div className="bg-zinc-950 border border-white/10 rounded-2xl py-6 px-6 shadow-2xl">
-                                        {/* Example dropdown content - customize per link */}
                                         {item.label === 'Services' && (
                                             <div className="space-y-4 text-sm">
                                                 <a href="#" className="block hover:text-white">Search & Growth Strategy</a>
@@ -103,27 +109,78 @@ export default function Navbar() {
                     href="#"
                     className="hidden md:flex items-center gap-2 bg-white text-black px-6 py-3 rounded-full text-sm font-medium hover:bg-white/90 transition"
                 >
-                    Get In Touch
-                    <span>→</span>
+                    Get In Touch →
                 </a>
 
                 {/* Mobile Hamburger */}
                 <button
                     onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                    className="lg:hidden text-xl"
+                    className="lg:hidden text-2xl"
                 >
-                    {mobileMenuOpen ? '✕' : '☰'}
+                    {mobileMenuOpen ? <FaXmark /> : <FaBars />}
                 </button>
             </div>
 
-            {/* Mobile Menu */}
+            {/* Mobile Menu with Dropdowns */}
             {mobileMenuOpen && (
                 <div className="lg:hidden bg-black border-t border-white/10 py-8 px-8">
                     <div className="flex flex-col gap-6 text-lg">
                         {navLinks.map((item) => (
-                            <a key={item.label} href="#" className="hover:text-white">
-                                {item.label}
-                            </a>
+                            <div key={item.label}>
+                                {item.hasDropdown ? (
+                                    <div>
+                                        <button
+                                            onClick={() => toggleMobileDropdown(item.label)}
+                                            className="flex items-center justify-between w-full text-left hover:text-white transition"
+                                        >
+                                            {item.label}
+                                            <span className="text-xl">{mobileDropdown === item.label ? <LuCircleChevronUp /> : <LuCircleChevronDown />}</span>
+                                        </button>
+
+                                        {/* Mobile Dropdown Content */}
+                                        {mobileDropdown === item.label && (
+                                            <div className="mt-4 ml-6 space-y-4 text-base text-white/70">
+                                                {item.label === 'Services' && (
+                                                    <>
+                                                        <a href="#" className="block">Search & Growth Strategy</a>
+                                                        <a href="#" className="block">Onsite SEO</a>
+                                                        <a href="#" className="block">Content Experience</a>
+                                                        <a href="#" className="block">B2B Marketing</a>
+                                                        <a href="#" className="block">Digital PR</a>
+                                                        <a href="#" className="block">Social Media & Campaigns</a>
+                                                        <a href="#" className="block">Data & Insights</a>
+                                                        <a href="#" className="block">Social SEO/Search</a>
+                                                    </>
+                                                )}
+                                                {item.label === 'Industries' && (
+                                                    <>
+                                                        <a href="#" className="block ">B2B Marketing</a>
+                                                    </>
+                                                )}
+                                                {item.label === 'International' && (
+                                                    <>
+                                                        <a href="#" className="block">US Digital PR</a>
+                                                        <a href="#" className="block">Spain Digital PR</a>
+                                                        <a href="#" className="block">Germany Digital PR</a>
+                                                        <a href="#" className="block">Netherlands Digital PR</a>
+                                                    </>
+                                                )}
+                                                {item.label === 'About' && (
+                                                    <>
+                                                        <a href="#" className="block">About Us</a>
+                                                        <a href="#" className="block">Meet The Risers</a>
+                                                        <a href="#" className="block">Culture</a>
+                                                        <a href="#" className="block">Testimonials</a>                                    </>
+                                                )}
+                                            </div>
+                                        )}
+                                    </div>
+                                ) : (
+                                    <a href="#" className="hover:text-white transition">
+                                        {item.label}
+                                    </a>
+                                )}
+                            </div>
                         ))}
                     </div>
                 </div>
