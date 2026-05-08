@@ -38,7 +38,6 @@ export default function Navbar() {
                     <Link href="/" className="h-5">
                         <Logo />
                     </Link>
-                    <sup className="text-lg -ml-1">®</sup>
                 </div>
 
                 {/* Desktop Navigation */}

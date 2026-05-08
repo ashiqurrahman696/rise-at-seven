@@ -268,7 +268,7 @@ export default function FeaturedWork() {
                                     }}
                                 >
                                     <p
-                                        className="text-2xl md:text-3xl font-semibold max-w-md leading-snug"
+                                        className="text-3xl md:text-5xl font-semibold max-w-lg leading-snug"
                                         style={{
                                             fontFamily: "'Clash Display',sans-serif",
                                             color: isLightOverlay(p.overlayColor) ? "#111" : "#fff",
