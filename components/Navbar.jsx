@@ -31,7 +31,7 @@ export default function Navbar() {
     };
 
     return (
-        <nav className="sticky top-0 left-0 right-0 z-50 bg-black/95 backdrop-blur-lg border-b border-white/10">
+        <nav className="sticky top-0 left-0 right-0 z-50 bg-black/95 backdrop-blur-lg border-b border-white/10 text-white">
             <div className="max-w-screen-2xl mx-auto px-8 py-5 flex items-center justify-between">
                 {/* Logo */}
                 <div className="flex items-center gap-1">
