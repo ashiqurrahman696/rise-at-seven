@@ -17,6 +17,7 @@ import AnnouncementBar from '@/components/AnnouncementBar';
 import ChasingConsumers from '@/components/ChasingConsumers';
 import CTAButton from '@/components/CTAButton';
 import RiseAtSevenText from '@/components/RiseAtSevenText';
+import AnimatedOverlay from '@/components/AnimatedOverlay';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -54,6 +55,7 @@ export default function Home() {
 
   return (
     <>
+      <AnimatedOverlay />
       <AnnouncementBar />
       <Navbar />
       <Hero />
