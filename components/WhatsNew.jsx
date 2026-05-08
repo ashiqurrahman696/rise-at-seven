@@ -67,7 +67,7 @@ export default function WhatsNew() {
             <div className="max-w-screen-2xl mx-auto px-6">
                 {/* Header */}
                 <div className="flex justify-between items-end mb-16">
-                    <div className="flex items-center gap-6">
+                    <div className="flex items-center flex-wrap gap-6">
                         <h2 className="text-7xl md:text-8xl font-bold tracking-tighter">What's</h2>
                         <div className="relative w-20 h-20 md:w-24 md:h-24 -mb-2 rounded-xl overflow-hidden border border-black/10">
                             <Image
@@ -79,8 +79,12 @@ export default function WhatsNew() {
                         </div>
                         <h2 className="text-7xl md:text-8xl font-bold tracking-tighter">New</h2>
                     </div>
-                    <a href="#" className="hidden md:block text-sm uppercase tracking-widest border-b border-black pb-1 hover:border-black/50 transition">
-                        Explore More Thoughts →
+                    <a
+                        href="#"
+                        className="group hidden md:flex items-center gap-3 text-black bg-white px-8 py-4 rounded-full text-sm uppercase tracking-widest font-medium transition"
+                    >
+                        Explore More Thoughts
+                        <span className="group-hover:translate-x-1 transition">→</span>
                     </a>
                 </div>
 
@@ -98,7 +102,7 @@ export default function WhatsNew() {
                                     src={item.image}
                                     alt={item.title}
                                     fill
-                                    className="object-cover group-hover:scale-105 transition-transform duration-700"
+                                    className="object-cover group-hover:blur-[10px] transition-transform duration-700"
                                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                                 />
                                 <div className="absolute top-6 left-6 bg-transparent backdrop-blur-md text-xs text-white font-medium px-4 py-1.5 rounded-full shadow">
@@ -132,8 +136,12 @@ export default function WhatsNew() {
                 </div>
 
                 <div className="text-center mt-12 md:hidden">
-                    <a href="#" className="inline-block text-sm uppercase tracking-widest border-b border-black pb-1">
-                        Explore More Thoughts →
+                    <a
+                        href="#"
+                        className="group flex justify-center items-center gap-3 text-black bg-white px-8 py-4 rounded-full text-sm uppercase tracking-widest font-medium transition"
+                    >
+                        Explore More Thoughts
+                        <span className="group-hover:translate-x-1 transition">→</span>
                     </a>
                 </div>
             </div>

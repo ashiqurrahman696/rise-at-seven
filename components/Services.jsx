@@ -38,8 +38,8 @@ export default function Services() {
         <section ref={sectionRef} className="bg-[#efeeec] py-20 md:py-28 text-black">
             <div className="max-w-screen-2xl mx-auto px-8">
                 {/* Header */}
-                <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-16">
-                    <div className="flex items-center gap-6">
+                <div className="flex justify-between items-end mb-16">
+                    <div className="flex items-center flex-wrap gap-6">
                         <h2 className="text-7xl md:text-8xl font-bold tracking-tighter">Our</h2>
 
                         <div className="relative w-20 h-20 md:w-24 md:h-24 -mb-2 rounded-xl overflow-hidden border border-black/10">
@@ -56,7 +56,7 @@ export default function Services() {
 
                     <a
                         href="#"
-                        className="group flex items-center gap-3 bg-black text-white px-8 py-4 rounded-full text-sm uppercase tracking-widest font-medium hover:bg-zinc-800 transition"
+                        className="group hidden md:flex items-center gap-3 text-black bg-white px-8 py-4 rounded-full text-sm uppercase tracking-widest font-medium transition"
                     >
                         View All Services
                         <span className="group-hover:translate-x-1 transition">→</span>
@@ -98,6 +98,15 @@ export default function Services() {
                             <div className="absolute bottom-0 left-8 right-8 h-px bg-black/20 group-hover:bg-white/50 transition-all" />
                         </div>
                     ))}
+                </div>
+                <div className="text-center mt-12 md:hidden">
+                    <a
+                        href="#"
+                        className="group flex justify-center items-center gap-3 text-black bg-white px-8 py-4 rounded-full text-sm uppercase tracking-widest font-medium transition"
+                    >
+                        View All Services
+                        <span className="group-hover:translate-x-1 transition">→</span>
+                    </a>
                 </div>
             </div>
         </section>
