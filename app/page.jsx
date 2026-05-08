@@ -16,6 +16,7 @@ import WhatsNew from '@/components/WhatsNew';
 import AnnouncementBar from '@/components/AnnouncementBar';
 import ChasingConsumers from '@/components/ChasingConsumers';
 import CTAButton from '@/components/CTAButton';
+import RiseAtSevenText from '@/components/RiseAtSevenText';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -64,6 +65,7 @@ export default function Home() {
       <ChasingConsumers />
       <LegacyInTheMaking />
       <WhatsNew />
+      <RiseAtSevenText />
       <Footer />
     </>
   );
