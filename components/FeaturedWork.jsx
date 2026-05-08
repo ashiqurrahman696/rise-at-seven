@@ -278,13 +278,12 @@ export default function FeaturedWork() {
                                     </p>
                                 </div>
 
-                                {/* Tag pill — top right for mobile, bottom right for desktop */}
+                                {/* Tag pill — bottom right */}
                                 <div
-                                    className="absolute max-md:top-4 md:bottom-4 right-4 z-20 flex items-center gap-2 px-3 py-1.5 rounded-full"
-                                    style={{ background: "rgba(255,255,255,0.12)", backdropFilter: "blur(8px)" }}
+                                    className="absolute bottom-4 right-4 z-20 flex items-center gap-2 px-3 py-1.5 rounded-full bg-white text-black"
                                 >
                                     <IoIosSearch />
-                                    <span className="text-white text-xs font-medium">{p.tag}</span>
+                                    <span className="text-xs font-medium">{p.tag}</span>
                                     <PiChartLineUpLight />
                                 </div>
 
