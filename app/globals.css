@@ -1,33 +1,26 @@
 @import "tailwindcss";
 
-@layer base {
-  :root {
-    --bg: #111212;
-    --text: #efeeec;
-    --accent: #efeeec;
-  }
+:root {
+  --bg: #efeeec;
+  --text: #111212;
+  --accent: #efeeec;
+}
+body {
+  font-family: 'Saans', system-ui, -apple-system, sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
 }
 
-@layer base {
-  body {
-    font-family: 'Saans', system-ui, -apple-system, sans-serif;
-    background-color: #111212;
-    color: #efeeec;
-  }
+.text-display {
+  font-size: clamp(4.5rem, 10vw, 9rem);
+  line-height: 0.92;
+  font-weight: 700;
+  letter-spacing: -0.04em;
 }
 
-@layer utilities {
-  .text-display {
-    font-size: clamp(4.5rem, 10vw, 9rem);
-    line-height: 0.92;
-    font-weight: 700;
-    letter-spacing: -0.04em;
-  }
-
-  .section-padding {
-    padding-top: 160px;
-    padding-bottom: 160px;
-  }
+.section-padding {
+  padding-top: 160px;
+  padding-bottom: 160px;
 }
 
 /* Smooth scrollbar */

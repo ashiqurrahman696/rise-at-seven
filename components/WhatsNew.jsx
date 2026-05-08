@@ -63,7 +63,7 @@ export default function WhatsNew() {
     }, []);
 
     return (
-        <section ref={sectionRef} id="news" className="bg-[#efeeec] py-20 text-black">
+        <section ref={sectionRef} id="news" className="py-20">
             <div className="max-w-screen-2xl mx-auto px-6">
                 {/* Header */}
                 <div className="flex justify-between items-end mb-16">

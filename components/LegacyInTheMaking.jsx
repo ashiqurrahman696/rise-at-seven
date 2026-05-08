@@ -59,7 +59,7 @@ export default function LegacyInTheMaking() {
     }, []);
 
     return (
-        <section ref={sectionRef} className="bg-[#efeeec] py-24 text-black overflow-hidden">
+        <section ref={sectionRef} className="py-24 overflow-hidden">
             <div className="max-w-screen-2xl mx-auto px-6">
                 <div className="text-center mb-16">
                     <h2 className="text-6xl md:text-7xl font-bold tracking-tighter">Legacy In The Making</h2>

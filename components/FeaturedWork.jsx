@@ -177,7 +177,7 @@ export default function FeaturedWork() {
     }, [projects.length]); // re-runs automatically when you add/remove projects
 
     return (
-        <section ref={sectionRef} className="featured-work-section bg-[#111111]">
+        <section ref={sectionRef} className="featured-work-section bg-black">
             {/* Pinned container — exactly 1 screen tall */}
             <div
                 ref={pinnedRef}

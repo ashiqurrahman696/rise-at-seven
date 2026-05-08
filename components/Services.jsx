@@ -35,7 +35,7 @@ export default function Services() {
     }, []);
 
     return (
-        <section ref={sectionRef} className="bg-[#efeeec] py-20 md:py-28 text-black">
+        <section ref={sectionRef} className="py-20 md:py-28">
             <div className="max-w-screen-2xl mx-auto px-8">
                 {/* Header */}
                 <div className="flex justify-between items-end mb-16">

@@ -25,7 +25,7 @@ export default function DrivingDemand() {
     }, []);
 
     return (
-        <section ref={sectionRef} className="bg-[#efeeec] py-20 text-black">
+        <section ref={sectionRef} className="py-20">
             <div className="max-w-screen-2xl mx-auto px-6">
                 <div className="grid lg:grid-cols-2 gap-16 lg:gap-20 items-center">
 
