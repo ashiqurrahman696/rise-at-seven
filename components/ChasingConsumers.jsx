@@ -3,7 +3,7 @@ import Marquee from 'react-fast-marquee';
 
 const ChasingConsumers = () => {
     return (
-        <div className="bg-[#f8f8f8] text-black">
+        <div className="bg-[#efeeec] text-black">
             <Marquee pauseOnHover={false} speed={50}>
                 <div className="flex items-center text-[7em] md:text-[9em] py-3 font-bold">
                     <h2>Chasing Consumers</h2>
