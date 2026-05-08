@@ -37,13 +37,13 @@ export default function Hero() {
     return (
         <section
             ref={ref}
-            className="relative flex items-center text-white overflow-hidden"
+            className="relative flex items-center bg-black text-white overflow-hidden"
         >
             {/* Background Image */}
-            <div className="absolute inset-0 bg-cover bg-center opacity-80" style={{
+            <div className="absolute inset-0 bg-cover bg-center opacity-75" style={{
                 backgroundImage: `url('${randomBg}')`
             }} />
-            <div className="absolute inset-0 backdrop-blur-lg" />
+            <div className="absolute inset-0 backdrop-blur-[20px]" />
 
             <div className="relative z-10 max-w-screen w-full mx-auto p-8">
                 {/* Award Line */}
