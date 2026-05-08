@@ -2,34 +2,35 @@
 import Image from 'next/image';
 import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
+import { IoMdStopwatch } from 'react-icons/io';
 
 const newsItems = [
     {
         id: 1,
+        category: "News",
+        image: "https://rise-atseven.transforms.svdcdn.com/production/images/0B5A8137.jpg?w=1600&h=900&q=80&fm=webp&fit=crop&crop=focalpoint&fp-x=0.5&fp-y=0.5&dm=1778062638&s=c6bb6842d5eea08035334bc7f80ce2bd",
+        author: "Ray Saddiq",
+        authorImage: "https://rise-atseven.transforms.svdcdn.com/production/images/blog/import/WhatsApp-Image-2025-06-23-at-22.50.52.jpeg?w=1231&h=1145&q=100&auto=format&fit=crop&dm=1750949501&s=fe120a0db5c7acc0cd0c72601fb4ba89",
+        time: "3 mins",
+        title: "Rise at Seven Appoints Hollie Lovell as Senior Operations Lead",
+    },
+    {
+        id: 2,
+        category: "News",
+        image: "https://rise-atseven.transforms.svdcdn.com/production/images/WRAS-Manchester-01.png?w=1600&h=900&q=80&fm=webp&fit=crop&crop=focalpoint&fp-x=0.5&fp-y=0.5&dm=1778084605&s=d61cf2310cf2858dc867d75ac7769e60",
+        author: "Ray Saddiq",
+        authorImage: "https://rise-atseven.transforms.svdcdn.com/production/images/blog/import/WhatsApp-Image-2025-06-23-at-22.50.52.jpeg?w=1231&h=1145&q=100&auto=format&fit=crop&dm=1750949501&s=fe120a0db5c7acc0cd0c72601fb4ba89",
+        time: "2 mins",
+        title: "Rise at Seven Exits Sheffield and Triples Manchester as new HQ as they go for global expansion",
+    },
+    {
+        id: 3,
         category: "News",
         image: "https://rise-atseven.transforms.svdcdn.com/production/images/0B5A7827.jpg?w=1600&h=900&q=80&fm=webp&fit=crop&crop=focalpoint&fp-x=0.5&fp-y=0.5&dm=1777514348&s=e49f66a9a3508223f02e24fd4fa242a7",
         author: "Carrie Rose",
         authorImage: "https://rise-atseven.transforms.svdcdn.com/production/images/blog/import/84b3917f166d7feb4c2376f78ce33ae432656999.jpg?w=1080&h=1080&q=100&auto=format&fit=crop&dm=1750847674&s=8bef9798a0d24a5970f561908d301967",
         time: "2 mins",
         title: "Ryan McNamara Is Now Rise at Seven's Global Operations Director",
-    },
-    {
-        id: 2,
-        category: "Food/Hospitality/Drink",
-        image: "https://rise-atseven.transforms.svdcdn.com/production/images/3-copy.jpg?w=1080&h=1080&q=100&auto=format&fit=crop&dm=1776098692&s=4d246e011936e8fd124105dd2af2e88e",
-        author: "Ray Saddiq",
-        authorImage: "https://rise-atseven.transforms.svdcdn.com/production/images/blog/import/WhatsApp-Image-2025-06-23-at-22.50.52.jpeg?w=1231&h=1145&q=100&auto=format&fit=crop&dm=1750949501&s=fe120a0db5c7acc0cd0c72601fb4ba89",
-        time: "2 mins",
-        title: "Rise at Seven Appointed by Coneys to Drive Demand and Retail Growth for them in the Chocolate Confectionery Category",
-    },
-    {
-        id: 3,
-        category: "Food/Hospitality/Drink",
-        image: "https://rise-atseven.transforms.svdcdn.com/production/images/Noomz1-4.jpg?w=1080&h=1350&q=100&auto=format&fit=crop&dm=1775034474&s=210ed78a74e52af8566a68c66f40d85a",
-        author: "Carrie Rose",
-        authorImage: "https://rise-atseven.transforms.svdcdn.com/production/images/blog/import/84b3917f166d7feb4c2376f78ce33ae432656999.jpg?w=1080&h=1080&q=100&auto=format&fit=crop&dm=1750847674&s=8bef9798a0d24a5970f561908d301967",
-        time: "2 mins",
-        title: "Rise at Seven Appointed by Langtins to drive demand and retail growth for Noomz",
     },
 ];
 
@@ -94,16 +95,15 @@ export default function WhatsNew() {
                         <div
                             key={item.id}
                             ref={(el) => { if (el) cardsRef.current[index] = el; }}
-                            className="news-card group bg-white rounded-3xl overflow-hidden hover:shadow-2xl transition-all duration-500 cursor-pointer flex flex-col h-full"
+                            className="news-card group overflow-hidden transition-all duration-500 cursor-pointer flex flex-col h-full"
                         >
                             {/* Image */}
-                            <div className="relative h-72 w-full bg-gray-200 overflow-hidden">
+                            <div className="relative h-88 w-full bg-gray-200 overflow-hidden">
                                 <Image
                                     src={item.image}
                                     alt={item.title}
                                     fill
                                     className="object-cover group-hover:blur-[10px] transition-transform duration-700"
-                                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                                 />
                                 <div className="absolute top-6 left-6 bg-transparent backdrop-blur-md text-xs text-white font-medium px-4 py-1.5 rounded-full shadow">
                                     {item.category}
@@ -111,23 +111,26 @@ export default function WhatsNew() {
                             </div>
 
                             {/* Content */}
-                            <div className="flex-1 p-8 flex flex-col">
+                            <div className="flex-1 py-4 flex flex-col">
                                 <div className="flex items-center gap-3 mb-6">
-                                    <div className="relative w-8 h-8 rounded-full overflow-hidden border border-gray-200 flex-shrink-0">
-                                        <Image
-                                            src={item.authorImage}
-                                            alt={item.author}
-                                            fill
-                                            className="object-cover"
-                                        />
+                                    <div className="flex items-center gap-2 bg-white p-1 pr-3 rounded-full">
+                                        <div className="relative w-6 h-6 rounded-full overflow-hidden">
+                                            <Image
+                                                src={item.authorImage}
+                                                alt={item.author}
+                                                fill
+                                                className="object-cover"
+                                            />
+                                        </div>
+                                        <p>{item.author}</p>
                                     </div>
-                                    <div>
-                                        <p className="text-sm font-medium">{item.author}</p>
-                                        <p className="text-xs text-gray-500">{item.time}</p>
-                                    </div>
+                                    <p className="bg-white p-1 px-2 rounded-full flex items-center gap-1">
+                                        <IoMdStopwatch />
+                                        <span>{item.time}</span>
+                                    </p>
                                 </div>
 
-                                <h3 className="text-[21px] leading-tight font-semibold flex-1">
+                                <h3 className="text-3xl leading-tight font-semibold flex-1">
                                     {item.title}
                                 </h3>
                             </div>
@@ -138,7 +141,7 @@ export default function WhatsNew() {
                 <div className="text-center mt-12 md:hidden">
                     <a
                         href="#"
-                        className="group flex justify-center items-center gap-3 text-black bg-white px-8 py-4 rounded-full text-sm uppercase tracking-widest font-medium transition"
+                        className="group flex justify-center items-center gap-3 text-black bg-white py-4 rounded-full text-sm uppercase tracking-widest font-medium transition"
                     >
                         Explore More Thoughts
                         <span className="group-hover:translate-x-1 transition">→</span>
