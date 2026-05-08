@@ -19,7 +19,7 @@ const clients = [
 
 export default function TheAgencyBehind() {
     return (
-        <section className="bg-[#efeeec] text-black py-20 md:py-28 border-t border-black/10">
+        <section className="bg-[#efeeec] text-black py-20 border-t border-black/10">
             <div className="max-w-screen-2xl mx-auto px-8">
                 <div className="flex items-center p-3 gap-5">
                     <p className="px-3 py-2">The Agency Behind...</p>

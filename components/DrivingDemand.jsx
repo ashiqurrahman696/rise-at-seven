@@ -25,7 +25,7 @@ export default function DrivingDemand() {
     }, []);
 
     return (
-        <section ref={sectionRef} className="bg-[#efeeec] py-20 md:py-32 text-black">
+        <section ref={sectionRef} className="bg-[#efeeec] py-20 text-black">
             <div className="max-w-screen-2xl mx-auto px-6">
                 <div className="grid lg:grid-cols-2 gap-16 lg:gap-20 items-center">
 
@@ -66,14 +66,14 @@ export default function DrivingDemand() {
                         <div className="flex flex-wrap gap-4 mt-12 lg:mt-16">
                             <a
                                 href="#"
-                                className="group inline-flex items-center gap-3 bg-black text-white px-8 py-4 rounded-full text-sm uppercase tracking-widest hover:bg-zinc-800 transition"
+                                className="group inline-flex items-center gap-3 bg-white text-black px-8 py-4 rounded-full text-sm uppercase tracking-widest hover:rounded-xl transition"
                             >
                                 Our Story
                                 <span className="group-hover:translate-x-1 transition">→</span>
                             </a>
                             <a
                                 href="#services"
-                                className="group inline-flex items-center gap-3 border border-black px-8 py-4 rounded-full text-sm uppercase tracking-widest hover:bg-black hover:text-white transition"
+                                className="group inline-flex items-center gap-3 text-black px-8 py-4 rounded-full text-sm uppercase tracking-widest transition"
                             >
                                 Our Services
                                 <span className="group-hover:translate-x-1 transition">→</span>
