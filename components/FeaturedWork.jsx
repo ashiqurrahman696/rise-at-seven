@@ -279,13 +279,13 @@ export default function FeaturedWork() {
                                 </div>
 
                                 {/* Tag pill — bottom right */}
-                                <div
+                                {p.tag && <div
                                     className="absolute bottom-4 right-4 z-20 flex items-center gap-2 px-3 py-1.5 rounded-full bg-white text-black"
                                 >
                                     <IoIosSearch />
                                     <span className="text-xs font-medium">{p.tag}</span>
                                     <PiChartLineUpLight />
-                                </div>
+                                </div>}
 
                                 {/* Name + period — bottom left (mobile always / desktop hidden) */}
                                 <div className="absolute bottom-5 left-5 z-20 md:opacity-0">
