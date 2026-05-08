@@ -13,7 +13,7 @@ const navLinks = [
     { label: 'About', hasDropdown: true },
     { label: 'Work', hasDropdown: false },
     { label: 'Careers', hasDropdown: false },
-    { label: 'Blog', hasDropdown: false },
+    { label: 'Blog & Resources', hasDropdown: true },
     { label: 'Webinar', hasDropdown: false },
 ];
 
@@ -98,6 +98,14 @@ export default function Navbar() {
                                                 <a href="#" className="block hover:text-white">Testimonials</a>
                                             </div>
                                         )}
+
+                                        {item.label === 'Blog & Resources' && (
+                                            <div className="space-y-4 text-sm">
+                                                <a href="#" className="block hover:text-white">Blog</a>
+                                                <a href="#" className="block hover:text-white">Category Leaderboard</a>
+                                                <a href="#" className="block hover:text-white">Multi-Channel Search Report</a>
+                                            </div>
+                                        )}
                                     </div>
                                 </div>
                             )}
@@ -108,7 +116,7 @@ export default function Navbar() {
                 {/* CTA Button */}
                 <a
                     href="#"
-                    className="hidden md:flex items-center gap-2 bg-white text-black px-6 py-3 rounded-full text-sm font-medium hover:bg-white/90 transition"
+                    className="hidden lg:flex items-center gap-2 bg-white text-black px-6 py-3 rounded-full text-sm font-medium hover:bg-white/90 transition"
                 >
                     Get In Touch →
                 </a>
@@ -171,7 +179,15 @@ export default function Navbar() {
                                                         <a href="#" className="block">About Us</a>
                                                         <a href="#" className="block">Meet The Risers</a>
                                                         <a href="#" className="block">Culture</a>
-                                                        <a href="#" className="block">Testimonials</a>                                    </>
+                                                        <a href="#" className="block">Testimonials</a>
+                                                    </>
+                                                )}
+                                                {item.label === 'Blog & Resources' && (
+                                                    <>
+                                                        <a href="#" className="block">Blog</a>
+                                                        <a href="#" className="block">Category Leaderboard</a>
+                                                        <a href="#" className="block">Multi-Channel Search Report</a>
+                                                    </>
                                                 )}
                                             </div>
                                         )}
@@ -183,6 +199,13 @@ export default function Navbar() {
                                 )}
                             </div>
                         ))}
+                        {/* CTA Button */}
+                        <a
+                            href="#"
+                            className="w-full text-center gap-2 bg-white text-black px-6 py-3 rounded-full text-sm font-medium hover:bg-white/90 transition"
+                        >
+                            Get In Touch →
+                        </a>
                     </div>
                 </div>
             )}
