@@ -3,6 +3,11 @@ import Image from 'next/image';
 import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Autoplay, Navigation, Pagination } from "swiper/modules";
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -65,6 +70,7 @@ export default function LegacyInTheMaking() {
                     <h2 className="text-6xl md:text-7xl font-bold tracking-tighter">Legacy In The Making</h2>
                 </div>
 
+                {/* Desktop View */}
                 <div className="max-w-5xl mx-auto space-y-12">
                     {legacyPoints.map((point, index) => (
                         <div
@@ -72,7 +78,7 @@ export default function LegacyInTheMaking() {
                             ref={(el) => { cardsRef.current[index] = el; }}
                             className="bg-black text-white rounded-3xl overflow-hidden group"
                         >
-                            <div className="grid md:grid-cols-12">
+                            <div className="hidden md:grid md:grid-cols-12">
                                 {/* Image */}
                                 <div className="md:col-span-5 relative h-80 md:h-full min-h-[380px]">
                                     <Image
@@ -95,6 +101,47 @@ export default function LegacyInTheMaking() {
                             </div>
                         </div>
                     ))}
+                </div>
+
+                {/* Mobile View */}
+                <div className="md:hidden">
+                    <Swiper
+                        modules={[Navigation, Pagination, Autoplay]}
+                        slidesPerView={1}
+                        spaceBetween={10}
+                        navigation
+                        pagination={{ clickable: true }}
+                        autoplay={{ delay: 3000 }}
+                        loop={true}
+                    >
+                        {legacyPoints.map((point, index) => (
+                            <SwiperSlide
+                                key={index}
+                            >
+                                <div className="bg-black text-white rounded-3xl overflow-hidden group h-full">
+                                    {/* Image */}
+                                    <div className="relative h-80 md:h-full min-h-[380px]">
+                                        <Image
+                                            src={point.image}
+                                            alt={point.title}
+                                            fill
+                                            className="object-cover group-hover:scale-105 transition-transform duration-700"
+                                        />
+                                    </div>
+
+                                    {/* Content */}
+                                    <div className="p-10 md:p-16 flex flex-col justify-center">
+                                        <h3 className="text-6xl md:text-7xl font-bold tracking-tighter mb-8">
+                                            {point.title}
+                                        </h3>
+                                        <p className="text-lg md:text-xl leading-relaxed text-white/80">
+                                            {point.text}
+                                        </p>
+                                    </div>
+                                </div>
+                            </SwiperSlide>
+                        ))}
+                    </Swiper>
                 </div>
             </div>
         </section>
