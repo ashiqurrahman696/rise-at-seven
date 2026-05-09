@@ -84,7 +84,7 @@ const LegacyInTheMaking = () => {
                                     {card.description}
                                 </p>
                                 {(card.mission || card.extra) && (
-                                    <p className="text-[15px] font-medium leading-snug border-t border-current/20 pt-4 px-2">
+                                    <p className="text-[15px] font-medium leading-snug pt-4 px-2">
                                         {card.mission || card.extra}
                                     </p>
                                 )}
