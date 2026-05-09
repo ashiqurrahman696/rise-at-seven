@@ -3,6 +3,11 @@ import Image from 'next/image';
 import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { IoMdStopwatch } from 'react-icons/io';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Autoplay, Navigation, Pagination } from "swiper/modules";
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
 
 const newsItems = [
     {
@@ -89,8 +94,8 @@ export default function WhatsNew() {
                     </a>
                 </div>
 
-                {/* Cards Grid */}
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {/* Desktop View: Cards Grid */}
+                <div className="hidden lg:grid lg:grid-cols-3 gap-6">
                     {newsItems.map((item, index) => (
                         <div
                             key={item.id}
@@ -98,12 +103,12 @@ export default function WhatsNew() {
                             className="news-card group overflow-hidden transition-all duration-500 cursor-pointer flex flex-col h-full"
                         >
                             {/* Image */}
-                            <div className="relative h-88 w-full bg-gray-200 overflow-hidden">
+                            <div className="relative h-88 w-full overflow-hidden">
                                 <Image
                                     src={item.image}
                                     alt={item.title}
                                     fill
-                                    className="object-cover group-hover:blur-[10px] transition-transform duration-700"
+                                    className="object-cover rounded-3xl group-hover:blur-[10px] transition-transform duration-700"
                                 />
                                 <div className="absolute top-6 left-6 bg-transparent backdrop-blur-md text-xs text-white font-medium px-4 py-1.5 rounded-full shadow">
                                     {item.category}
@@ -136,6 +141,71 @@ export default function WhatsNew() {
                             </div>
                         </div>
                     ))}
+                </div>
+
+                {/* Mobile View: Cards Slider */}
+                <div className="lg:hidden">
+                    <Swiper
+                        modules={[Navigation, Pagination, Autoplay]}
+                        slidesPerView={1}
+                        spaceBetween={10}
+                        navigation
+                        pagination={{ clickable: true }}
+                        autoplay={{ delay: 3000 }}
+                        loop={true}
+                        breakpoints={{
+                            640: {
+                                slidesPerView: 2,
+                                spaceBetween: 20,
+                            },
+                        }}
+                    >
+                        {newsItems.map((item, index) => (
+                            <SwiperSlide key={item.id}>
+                                <div
+                                    className="news-card group overflow-hidden transition-all duration-500 cursor-pointer flex flex-col h-full"
+                                >
+                                    {/* Image */}
+                                    <div className="relative h-88 w-full overflow-hidden">
+                                        <Image
+                                            src={item.image}
+                                            alt={item.title}
+                                            fill
+                                            className="object-cover rounded-3xl group-hover:blur-[10px] transition-transform duration-700"
+                                        />
+                                        <div className="absolute top-6 left-6 bg-transparent backdrop-blur-md text-xs text-white font-medium px-4 py-1.5 rounded-full shadow">
+                                            {item.category}
+                                        </div>
+                                    </div>
+
+                                    {/* Content */}
+                                    <div className="flex-1 py-4 flex flex-col">
+                                        <div className="flex items-center gap-3 mb-6">
+                                            <div className="flex items-center gap-2 bg-white p-1 pr-3 rounded-full">
+                                                <div className="relative w-6 h-6 rounded-full overflow-hidden">
+                                                    <Image
+                                                        src={item.authorImage}
+                                                        alt={item.author}
+                                                        fill
+                                                        className="object-cover"
+                                                    />
+                                                </div>
+                                                <p>{item.author}</p>
+                                            </div>
+                                            <p className="bg-white p-1 px-2 rounded-full flex items-center gap-1">
+                                                <IoMdStopwatch />
+                                                <span>{item.time}</span>
+                                            </p>
+                                        </div>
+
+                                        <h3 className="text-3xl leading-tight font-semibold flex-1">
+                                            {item.title}
+                                        </h3>
+                                    </div>
+                                </div>
+                            </SwiperSlide>
+                        ))}
+                    </Swiper>
                 </div>
 
                 <div className="text-center mt-12 md:hidden">
