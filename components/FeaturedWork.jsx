@@ -206,7 +206,7 @@ const FeaturedWork = () => {
                                     <AnimatePresence>
                                         {hoveredId === work.id && (
                                             <motion.div
-                                                className="absolute inset-0 z-30 flex flex-col p-6"
+                                                className="absolute inset-0 z-30 flex flex-col p-6 cursor-none"
                                                 initial={{ clipPath: "circle(0% at 50% 50%)" }}
                                                 animate={{ clipPath: "circle(150% at 50% 50%)" }}
                                                 exit={{ clipPath: "circle(0% at 50% 50%)" }}
