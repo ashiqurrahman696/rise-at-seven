@@ -89,7 +89,7 @@ export default function Services() {
                                 </span>
 
                                 {/* Title */}
-                                <h3 className="text-2xl md:text-5xl font-semibold tracking-tighter text-black group-hover:text-white transition-all duration-500">
+                                <h3 className="text-2xl sm:text-3xl lg:text-5xl font-semibold tracking-tighter text-black group-hover:text-white transition-all duration-500">
                                     {service.title}
                                 </h3>
                             </div>
