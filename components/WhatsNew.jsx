@@ -3,11 +3,7 @@ import Image from 'next/image';
 import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { IoMdStopwatch } from 'react-icons/io';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Autoplay, Navigation, Pagination } from "swiper/modules";
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
+import { motion, useScroll, useTransform } from "framer-motion";
 
 const newsItems = [
     {
@@ -42,6 +38,19 @@ const newsItems = [
 export default function WhatsNew() {
     const sectionRef = useRef(null);
     const cardsRef = useRef([]);
+
+    const mobileScrollRef = useRef(null);
+
+    const { scrollYProgress } = useScroll({
+        target: sectionRef,
+        offset: ["start start", "end end"],
+    });
+
+    const { scrollXProgress } = useScroll({
+        container: mobileScrollRef,
+    });
+
+    const mobileWidth = useTransform(scrollXProgress, [0, 1], ["33.33%", "100%"]);
 
     useEffect(() => {
         const ctx = gsap.context(() => {
@@ -145,67 +154,64 @@ export default function WhatsNew() {
 
                 {/* Mobile View: Cards Slider */}
                 <div className="lg:hidden">
-                    <Swiper
-                        modules={[Navigation, Pagination, Autoplay]}
-                        slidesPerView={1}
-                        spaceBetween={10}
-                        navigation
-                        pagination={{ clickable: true }}
-                        autoplay={{ delay: 3000 }}
-                        loop={true}
-                        breakpoints={{
-                            640: {
-                                slidesPerView: 2,
-                                spaceBetween: 20,
-                            },
-                        }}
+                    <div
+                        ref={mobileScrollRef}
+                        className="flex overflow-x-auto snap-x snap-mandatory no-scrollbar gap-5"
                     >
                         {newsItems.map((item, index) => (
-                            <SwiperSlide key={item.id}>
-                                <div
-                                    className="news-card group overflow-hidden transition-all duration-500 cursor-pointer flex flex-col h-full"
-                                >
-                                    {/* Image */}
-                                    <div className="relative h-88 w-full overflow-hidden">
-                                        <Image
-                                            src={item.image}
-                                            alt={item.title}
-                                            fill
-                                            className="object-cover rounded-3xl group-hover:blur-[10px] transition-transform duration-700"
-                                        />
-                                        <div className="absolute top-6 left-6 bg-transparent backdrop-blur-md text-xs text-white font-medium px-4 py-1.5 rounded-full shadow">
-                                            {item.category}
-                                        </div>
-                                    </div>
-
-                                    {/* Content */}
-                                    <div className="flex-1 py-4 flex flex-col">
-                                        <div className="flex items-center gap-3 mb-6">
-                                            <div className="flex items-center gap-2 bg-white p-1 pr-3 rounded-full">
-                                                <div className="relative w-6 h-6 rounded-full overflow-hidden">
-                                                    <Image
-                                                        src={item.authorImage}
-                                                        alt={item.author}
-                                                        fill
-                                                        className="object-cover"
-                                                    />
-                                                </div>
-                                                <p>{item.author}</p>
-                                            </div>
-                                            <p className="bg-white p-1 px-2 rounded-full flex items-center gap-1">
-                                                <IoMdStopwatch />
-                                                <span>{item.time}</span>
-                                            </p>
-                                        </div>
-
-                                        <h3 className="text-3xl leading-tight font-semibold flex-1">
-                                            {item.title}
-                                        </h3>
+                            <div
+                                key={item.id}
+                                ref={(el) => { if (el) cardsRef.current[index] = el; }}
+                                className="news-card group overflow-hidden transition-all duration-500 cursor-pointer flex flex-col w-[80vw] h-full shrink-0"
+                            >
+                                {/* Image */}
+                                <div className="relative h-88 w-full overflow-hidden">
+                                    <Image
+                                        src={item.image}
+                                        alt={item.title}
+                                        fill
+                                        className="object-cover rounded-3xl group-hover:blur-[10px] transition-transform duration-700"
+                                    />
+                                    <div className="absolute top-6 left-6 bg-transparent backdrop-blur-md text-xs text-white font-medium px-4 py-1.5 rounded-full shadow">
+                                        {item.category}
                                     </div>
                                 </div>
-                            </SwiperSlide>
+
+                                {/* Content */}
+                                <div className="flex-1 py-4 flex flex-col">
+                                    <div className="flex items-center gap-3 mb-6">
+                                        <div className="flex items-center gap-2 bg-white p-1 pr-3 rounded-full">
+                                            <div className="relative w-6 h-6 rounded-full overflow-hidden">
+                                                <Image
+                                                    src={item.authorImage}
+                                                    alt={item.author}
+                                                    fill
+                                                    className="object-cover"
+                                                />
+                                            </div>
+                                            <p>{item.author}</p>
+                                        </div>
+                                        <p className="bg-white p-1 px-2 rounded-full flex items-center gap-1">
+                                            <IoMdStopwatch />
+                                            <span>{item.time}</span>
+                                        </p>
+                                    </div>
+
+                                    <h3 className="text-3xl leading-tight font-semibold flex-1">
+                                        {item.title}
+                                    </h3>
+                                </div>
+                            </div>
                         ))}
-                    </Swiper>
+                    </div>
+                    <div className="px-12 mt-14">
+                        <div className="relative w-full h-[4px] bg-gray-300 rounded-full">
+                            <motion.div
+                                className="absolute top-0 left-0 h-full bg-black rounded-full"
+                                style={{ width: mobileWidth, transformOrigin: "0%" }}
+                            />
+                        </div>
+                    </div>
                 </div>
 
                 <div className="text-center mt-12 md:hidden">
