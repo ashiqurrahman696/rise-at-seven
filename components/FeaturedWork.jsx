@@ -7,6 +7,7 @@ import {
 } from "framer-motion";
 import { IoIosSearch } from "react-icons/io";
 import { PiChartLineUp } from "react-icons/pi";
+import { RxArrowTopRight } from "react-icons/rx";
 
 const WORKS = [
     {
@@ -151,20 +152,6 @@ const FeaturedWork = () => {
         });
     };
 
-    const ArrowIcon = () => (
-        <svg
-            width="30"
-            height="30"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-        >
-            <line x1="7" y1="17" x2="17" y2="7"></line>
-            <polyline points="7 7 17 7 17 17"></polyline>
-        </svg>
-    );
-
     return (
         <section
             ref={targetRef}
@@ -246,7 +233,7 @@ const FeaturedWork = () => {
                                                     animate={{ scale: 1 }}
                                                     exit={{ scale: 0 }}
                                                 >
-                                                    <ArrowIcon />
+                                                    <RxArrowTopRight className="text-3xl" />
                                                 </motion.div>
                                                 <motion.h4
                                                     className="text-black text-5xl font-semibold tracking-tighter leading-tight"
@@ -352,7 +339,7 @@ const FeaturedWork = () => {
                                                             animate={{ scale: 1 }}
                                                             exit={{ scale: 0 }}
                                                         >
-                                                            <ArrowIcon />
+                                                            <RxArrowTopRight className="text-5xl" />
                                                         </motion.div>
                                                         <motion.h4
                                                             className="text-black text-5xl font-medium tracking-tighter"
