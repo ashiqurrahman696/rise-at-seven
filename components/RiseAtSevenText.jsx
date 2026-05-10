@@ -16,44 +16,45 @@ export default function RiseAtSevenText() {
 
         if (!section || !text) return;
 
-        // Split text into letters for zigzag control
-        const letters = text.innerText.split('');
-        text.innerHTML = letters
-            .map((char, i) => `<span class="inline-block">${char === ' ' ? '&nbsp;' : char}</span>`)
+        // Split text into letters
+        const originalText = text.innerText;
+        text.innerHTML = originalText
+            .split('')
+            .map((char) => `<span class="inline-block">${char === ' ' ? '&nbsp;' : char}</span>`)
             .join('');
 
         const letterSpans = text.querySelectorAll('span');
 
-        // Initial position - far right
-        gsap.set(text, { x: '80vw' });
+        // Initial position - far right (off screen)
+        gsap.set(text, { x: '155vw' });
 
         const tl = gsap.timeline({
             scrollTrigger: {
                 trigger: section,
-                start: 'top 75%',
-                end: 'bottom 25%',
-                scrub: 1.5,
+                start: 'top 70%',
+                end: 'bottom 30%',
+                scrub: 1.8,           // Very smooth
                 invalidateOnRefresh: true,
             },
         });
 
-        // Main horizontal slide (right → left)
+        // Main horizontal movement: Right → Left
         tl.to(text, {
-            x: '-95vw',
+            x: '-100vw',
             ease: 'none',
-            duration: 1,
         }, 0);
 
-        // Zigzag wave animation on letters
+        // === Smooth Wavy Sine Animation ===
         letterSpans.forEach((span, i) => {
+            const delay = i * 0.012; // Wave propagation speed
+
             gsap.to(span, {
-                y: i % 2 === 0 ? -25 : 25,        // Alternate up/down
-                rotation: i % 3 === 0 ? -4 : 4,   // Slight rotation for zigzag feel
-                ease: 'sine.inOut',
-                duration: 1.8,
-                delay: i * 0.02,
-                yoyo: true,
+                y: -35,                    // Wave height
+                duration: 2,
+                ease: "sine.inOut",
                 repeat: -1,
+                yoyo: true,
+                delay: delay,
                 scrollTrigger: {
                     trigger: section,
                     start: 'top 80%',
@@ -61,27 +62,27 @@ export default function RiseAtSevenText() {
                     toggleActions: 'play pause resume pause',
                 },
             });
-        });
 
-        // Optional subtle scale pulse
-        gsap.to(letterSpans, {
-            scale: 1.03,
-            stagger: 0.03,
-            duration: 2.2,
-            yoyo: true,
-            repeat: -1,
-            ease: 'sine.inOut',
-            scrollTrigger: {
-                trigger: section,
-                scrub: false,
-            },
+            // Subtle rotation for more organic wave
+            gsap.to(span, {
+                rotation: 2.5,
+                duration: 3.8,
+                ease: "sine.inOut",
+                repeat: -1,
+                yoyo: true,
+                delay: delay * 0.8,
+                scrollTrigger: {
+                    trigger: section,
+                    start: 'top 80%',
+                    end: 'bottom 20%',
+                },
+            });
         });
 
         return () => {
             ScrollTrigger.getAll().forEach((st) => st.kill());
         };
     }, []);
-
     return (
         <section
             ref={sectionRef}
