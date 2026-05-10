@@ -39,7 +39,7 @@ export default function DrivingDemand() {
 
                     {/* Right Side - Main Headline + Image */}
                     <div className="animate-text space-y-6">
-                        <div className="flex flex-wrap gap-x-2 items-start md:items-end text-4xl lg:text-5xl font-semibold max-w-100 md:max-w-full">
+                        <div className="flex flex-wrap gap-x-2 items-start md:items-end text-4xl lg:text-5xl xl:text-7xl font-semibold max-w-100 md:max-w-full">
                             <h2 className="inline">
                                 Driving
                             </h2>
@@ -73,14 +73,14 @@ export default function DrivingDemand() {
                         <div className="flex flex-wrap gap-4">
                             <a
                                 href="#"
-                                className="group flex items-center gap-3 bg-white text-black px-8 py-4 rounded-full text-sm uppercase tracking-tighter hover:rounded-xl transition max-md:w-full justify-center"
+                                className="group flex items-center gap-3 bg-white text-black px-8 py-4 rounded-full text-sm tracking-tighter hover:rounded-xl transition max-md:w-full justify-center"
                             >
                                 <span>Our Story</span>
                                 <RxArrowTopRight />
                             </a>
                             <a
                                 href="#services"
-                                className="group flex items-center gap-3 text-black py-4 rounded-full text-sm uppercase tracking-tighter transition max-md:w-full justify-center"
+                                className="group flex items-center gap-3 text-black py-4 rounded-full text-sm tracking-tighter transition max-md:w-full justify-center"
                             >
                                 <span>Our Services</span>
                                 <RxArrowTopRight />
