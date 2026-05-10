@@ -39,7 +39,7 @@ export default function DrivingDemand() {
 
                     {/* Right Side - Main Headline + Image */}
                     <div className="animate-text space-y-6">
-                        <div className="flex flex-wrap gap-x-2 items-start md:items-end text-4xl lg:text-5xl xl:text-7xl font-semibold max-w-100 md:max-w-full">
+                        <div className="flex flex-wrap gap-x-2 items-start md:items-end text-4xl lg:text-5xl xl:text-7xl font-semibold max-w-90 md:max-w-full">
                             <h2 className="inline">
                                 Driving
                             </h2>
@@ -64,7 +64,7 @@ export default function DrivingDemand() {
                         </div>
 
                         <div className="md:hidden animate-text">
-                            <p className="text-xl leading-tight max-w-lg tracking-tight font-semibold">
+                            <p className="text-xl leading-tight max-w-90 tracking-tight font-semibold">
                                 A global team of search-first content marketers engineering semantic relevancy & category signals for both the internet and people
                             </p>
                         </div>
