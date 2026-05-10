@@ -16,32 +16,68 @@ export default function RiseAtSevenText() {
 
         if (!section || !text) return;
 
-        // Initial position: far right (off-screen)
-        gsap.set(text, { x: '200vw' });
+        // Split text into letters for zigzag control
+        const letters = text.innerText.split('');
+        text.innerHTML = letters
+            .map((char, i) => `<span class="inline-block">${char === ' ' ? '&nbsp;' : char}</span>`)
+            .join('');
+
+        const letterSpans = text.querySelectorAll('span');
+
+        // Initial position - far right
+        gsap.set(text, { x: '80vw' });
 
         const tl = gsap.timeline({
             scrollTrigger: {
                 trigger: section,
-                start: 'top 80%',
-                end: 'bottom 20%',
-                scrub: 1.2,           // Smooth scrubbing (feels premium)
-                pin: false,
-                anticipatePin: 1,
+                start: 'top 75%',
+                end: 'bottom 25%',
+                scrub: 1.5,
                 invalidateOnRefresh: true,
             },
         });
 
-        // Animate from right → left as you scroll down
+        // Main horizontal slide (right → left)
         tl.to(text, {
-            x: '-90vw',           // Ends far left (off-screen)
+            x: '-95vw',
             ease: 'none',
+            duration: 1,
+        }, 0);
+
+        // Zigzag wave animation on letters
+        letterSpans.forEach((span, i) => {
+            gsap.to(span, {
+                y: i % 2 === 0 ? -25 : 25,        // Alternate up/down
+                rotation: i % 3 === 0 ? -4 : 4,   // Slight rotation for zigzag feel
+                ease: 'sine.inOut',
+                duration: 1.8,
+                delay: i * 0.02,
+                yoyo: true,
+                repeat: -1,
+                scrollTrigger: {
+                    trigger: section,
+                    start: 'top 80%',
+                    end: 'bottom 20%',
+                    toggleActions: 'play pause resume pause',
+                },
+            });
         });
 
-        // Optional: Add slight scale/rotation for more drama
-        // tl.to(text, { scale: 0.95, rotation: -2 }, 0);
+        // Optional subtle scale pulse
+        gsap.to(letterSpans, {
+            scale: 1.03,
+            stagger: 0.03,
+            duration: 2.2,
+            yoyo: true,
+            repeat: -1,
+            ease: 'sine.inOut',
+            scrollTrigger: {
+                trigger: section,
+                scrub: false,
+            },
+        });
 
         return () => {
-            tl.kill();
             ScrollTrigger.getAll().forEach((st) => st.kill());
         };
     }, []);
@@ -49,11 +85,16 @@ export default function RiseAtSevenText() {
     return (
         <section
             ref={sectionRef}
-            className="relative pt-10 pb-0 flex items-center justify-center overflow-hidden"
+            className="relative h-[130vh] bg-black flex items-center justify-center overflow-hidden"
         >
             <div
                 ref={textRef}
-                className="font-bold tracking-[-0.04em] whitespace-nowrap text-[11em]"
+                className="text-white font-black tracking-[-0.05em] whitespace-nowrap select-none will-change-transform"
+                style={{
+                    fontSize: 'clamp(3.5rem, 13vw, 17rem)',
+                    fontFamily: 'Playfair Display, serif',
+                    lineHeight: 0.85,
+                }}
             >
                 Ready to Rise at Seven?
             </div>

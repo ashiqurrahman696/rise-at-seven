@@ -56,10 +56,10 @@ export default function Services() {
 
                     <a
                         href="#"
-                        className="group hidden md:flex items-center gap-3 text-black bg-white px-8 py-4 rounded-full text-sm uppercase tracking-widest font-medium transition hover:rounded-xl"
+                        className="group hidden md:flex items-center gap-3 text-black bg-white px-8 py-4 rounded-full text-sm tracking-tighter font-medium transition hover:rounded-xl"
                     >
                         View All Services
-                        <span className="group-hover:translate-x-1 transition">→</span>
+                        <span className="group-hover:translate-x-1 transition"><RxArrowTopRight /></span>
                     </a>
                 </div>
 
@@ -102,10 +102,10 @@ export default function Services() {
                 <div className="text-center mt-12 md:hidden">
                     <a
                         href="#"
-                        className="group flex justify-center items-center gap-3 text-black bg-white px-8 py-4 rounded-full text-sm uppercase tracking-widest font-medium transition hover:rounded-xl"
+                        className="group flex justify-center items-center gap-3 text-black bg-white px-8 py-4 rounded-full text-sm tracking-tighter font-medium transition hover:rounded-xl"
                     >
                         View All Services
-                        <span className="group-hover:translate-x-1 transition">→</span>
+                        <span className="group-hover:translate-x-1 transition"><RxArrowTopRight /></span>
                     </a>
                 </div>
             </div>
