@@ -345,7 +345,6 @@ Throughout the homepage, several CTAs guide visitors:
 
 ## Page Performance Notes
 
-- Analytics tracking implemented (Google Analytics)
 - SplitText animation warnings for text rendering optimization
 - Modern web technologies for performance
 
