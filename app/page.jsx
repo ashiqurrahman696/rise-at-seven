@@ -4,7 +4,6 @@ import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Lenis from 'lenis';
-import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
 import FeaturedWork from '@/components/FeaturedWork';
 import Footer from '@/components/Footer';
@@ -57,7 +56,6 @@ export default function Home() {
     <>
       <AnimatedOverlay />
       <AnnouncementBar />
-      <Navbar />
       <Hero />
       <TheAgencyBehind />
       <DrivingDemand />
