@@ -155,7 +155,7 @@ const FeaturedWork = () => {
     return (
         <section
             ref={targetRef}
-            className="relative h-auto md:h-[990vh] bg-[#f2f1ef] pb-20 md:pb-0"
+            className="relative h-auto md:h-[990vh] bg-[#efeeec] pb-0"
         >
             <div className="md:sticky md:top-0 md:h-screen w-full flex flex-col items-center justify-center p-4 lg:p-7">
                 {/* Main Black Box */}

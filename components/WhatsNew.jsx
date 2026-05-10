@@ -96,7 +96,7 @@ export default function WhatsNew() {
                     </div>
                     <a
                         href="#"
-                        className="group hidden md:flex items-center gap-3 text-black bg-white px-8 py-4 rounded-full text-sm uppercase tracking-widest font-medium transition"
+                        className="group hidden md:flex items-center gap-3 text-black bg-white px-8 py-4 rounded-full text-sm uppercase tracking-widest font-medium transition hover:rounded-xl"
                     >
                         Explore More Thoughts
                         <span className="group-hover:translate-x-1 transition">→</span>
@@ -217,7 +217,7 @@ export default function WhatsNew() {
                 <div className="text-center mt-12 md:hidden">
                     <a
                         href="#"
-                        className="group flex justify-center items-center gap-3 text-black bg-white py-4 rounded-full text-sm uppercase tracking-widest font-medium transition"
+                        className="group flex justify-center items-center gap-3 text-black bg-white py-4 rounded-full text-sm uppercase tracking-widest font-medium transition hover:rounded-xl"
                     >
                         Explore More Thoughts
                         <span className="group-hover:translate-x-1 transition">→</span>
