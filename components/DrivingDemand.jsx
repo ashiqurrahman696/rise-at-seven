@@ -2,6 +2,7 @@
 import Image from 'next/image';
 import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
+import { RxArrowTopRight } from 'react-icons/rx';
 
 export default function DrivingDemand() {
     const sectionRef = useRef(null);
@@ -27,62 +28,63 @@ export default function DrivingDemand() {
     return (
         <section ref={sectionRef} className="py-20">
             <div className="max-w-screen-2xl mx-auto px-6">
-                <div className="grid lg:grid-cols-2 gap-16 lg:gap-20 items-center">
+                <div className="grid md:grid-cols-2 gap-16 md:gap-20">
 
                     {/* Left Side - Desktop Only */}
-                    <div className="hidden lg:block animate-text">
-                        <p className="text-xl leading-tight max-w-lg">
+                    <div className="hidden md:block animate-text">
+                        <p className="text-xl leading-tight max-w-lg tracking-tight font-semibold">
                             A global team of search-first content marketers engineering semantic relevancy & category signals for both the internet and people
                         </p>
                     </div>
 
                     {/* Right Side - Main Headline + Image */}
-                    <div className="animate-text flex flex-wrap items-center justify-start gap-x-2">
-                        <h2 className="text-5xl font-semibold inline">
-                            Driving
-                        </h2>
-                        <h2 className="text-5xl font-semibold inline">
-                            Demand
-                        </h2>
-                        <h2 className="text-5xl font-semibold inline">
-                            &
-                        </h2>
-                        <h2 className="text-5xl font-semibold inline">
-                            Discovery
-                        </h2>
+                    <div className="animate-text space-y-6">
+                        <div className="flex flex-wrap gap-x-2 items-start md:items-end text-4xl lg:text-5xl font-semibold max-w-100 md:max-w-full">
+                            <h2 className="inline">
+                                Driving
+                            </h2>
+                            <h2 className="inline">
+                                Demand
+                            </h2>
+                            <h2 className="inline">
+                                &
+                            </h2>
+                            <h2 className="inline">
+                                Discovery
+                            </h2>
 
-                        {/* Embedded Image */}
-                        <div className="inline mt-6 mb-8 lg:mb-0">
-                            <Image
-                                src="https://rise-atseven.transforms.svdcdn.com/production/images/b2087e0cd3f699d3efc76f809ec72a85a6ab378e-1080x1350.jpg?w=200&h=200&q=80&fm=webp&fit=crop&crop=focalpoint&fp-x=0.5&fp-y=0.5&dm=1750847630&s=a668733e8ced1733809794da9c15f062"
-                                alt="Pioneer holding sign"
-                                width={50}
-                                height={50}
-                                className="rounded-xl shadow-lg"
-                            />
+                            {/* Embedded Image */}
+                            <div className="inline size-13 lg:size-15">
+                                <img
+                                    src="https://rise-atseven.transforms.svdcdn.com/production/images/b2087e0cd3f699d3efc76f809ec72a85a6ab378e-1080x1350.jpg?w=200&h=200&q=80&fm=webp&fit=crop&crop=focalpoint&fp-x=0.5&fp-y=0.5&dm=1750847630&s=a668733e8ced1733809794da9c15f062"
+                                    alt="Pioneer holding sign"
+                                    className="rounded-xl shadow-lg size-full"
+                                />
+                            </div>
+                        </div>
+
+                        <div className="md:hidden animate-text">
+                            <p className="text-xl leading-tight max-w-lg tracking-tight font-semibold">
+                                A global team of search-first content marketers engineering semantic relevancy & category signals for both the internet and people
+                            </p>
                         </div>
 
                         {/* Buttons */}
-                        <div className="flex flex-wrap gap-4 mt-12 lg:mt-16">
+                        <div className="flex flex-wrap gap-4">
                             <a
                                 href="#"
-                                className="group inline-flex items-center gap-3 bg-white text-black px-8 py-4 rounded-full text-sm uppercase tracking-widest hover:rounded-xl transition"
+                                className="group flex items-center gap-3 bg-white text-black px-8 py-4 rounded-full text-sm uppercase tracking-tighter hover:rounded-xl transition max-md:w-full justify-center"
                             >
-                                Our Story
-                                <span className="group-hover:translate-x-1 transition">→</span>
+                                <span>Our Story</span>
+                                <RxArrowTopRight />
                             </a>
                             <a
                                 href="#services"
-                                className="group inline-flex items-center gap-3 text-black px-8 py-4 rounded-full text-sm uppercase tracking-widest transition"
+                                className="group flex items-center gap-3 text-black py-4 rounded-full text-sm uppercase tracking-tighter transition max-md:w-full justify-center"
                             >
-                                Our Services
-                                <span className="group-hover:translate-x-1 transition">→</span>
+                                <span>Our Services</span>
+                                <RxArrowTopRight />
                             </a>
-                        </div>
-
-                        {/* Mobile Text - Shown only on mobile */}
-                        <div className="lg:hidden mt-8 leading-tight">
-                            A global team of search-first content marketers engineering semantic relevancy & category signals for both the internet and people
                         </div>
                     </div>
                 </div>
