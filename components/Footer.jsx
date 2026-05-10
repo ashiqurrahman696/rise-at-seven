@@ -93,7 +93,7 @@ export default function Footer() {
                         <div className="lg:col-span-7 grid grid-cols-2 md:grid-cols-3 gap-10">
                             {/* Column 1 */}
                             <div>
-                                <ul className="text-2xl font-semibold border-l pl-2 border-white/10">
+                                <ul className="text-[18px] lg:text-[22px] font-semibold border-l pl-2 border-white/10">
                                     <li><a href="#" className="hover:text-[#b0f3e0] transition">Services</a></li>
                                     <li><a href="#" className="hover:text-[#b0f3e0] transition">Work</a></li>
                                     <li><a href="#" className="hover:text-[#b0f3e0] transition">About</a></li>
@@ -104,7 +104,7 @@ export default function Footer() {
 
                             {/* Column 2 */}
                             <div>
-                                <ul className="text-2xl font-semibold border-l pl-2 border-white/10">
+                                <ul className="text-[18px] lg:text-[22px] font-semibold border-l pl-2 border-white/10">
                                     <li><a href="#" className="hover:text-[#b0f3e0] transition">Testimonials</a></li>
                                     <li><a href="#" className="hover:text-[#b0f3e0] transition">Blog & Resources</a></li>
                                     <li><a href="#" className="hover:text-[#b0f3e0] transition">Webinars</a></li>
@@ -114,7 +114,7 @@ export default function Footer() {
 
                             {/* Column 3 */}
                             <div>
-                                <ul className="text-2xl font-semibold border-l pl-2 border-white/10">
+                                <ul className="text-[18px] lg:text-[22px] font-semibold border-l pl-2 border-white/10">
                                     <li><a href="#" className="hover:text-[#b0f3e0] transition">Sheffield</a></li>
                                     <li><a href="#" className="hover:text-[#b0f3e0] transition">Manchester</a></li>
                                     <li><a href="#" className="hover:text-[#b0f3e0] transition">London</a></li>
