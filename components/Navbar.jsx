@@ -33,7 +33,7 @@ export default function Navbar() {
     };
 
     return (
-        <nav className="text-white z-100">
+        <nav className="text-white z-10 w-full">
             <div className="max-w-screen-2xl mx-auto px-8 py-5 flex items-center justify-between">
                 {/* Logo */}
                 <div className="flex items-center gap-1">

@@ -44,13 +44,13 @@ export default function Hero() {
                 <div className="absolute inset-0 bg-cover bg-center opacity-75" style={{
                     backgroundImage: `url('${randomBg}')`
                 }} />
-                <div className="absolute inset-0 backdrop-blur-[20px]" />
+                <div className="absolute inset-0 backdrop-blur-[14px]" />
 
-                <div className="relative max-w-screen w-full mx-auto ">
+                <div className="relative max-w-screen w-full mx-auto flex flex-col min-h-screen justify-between">
                     <Navbar />
                     <div className="p-8">
                         {/* Award Line */}
-                        <div className="text-center text-xs uppercase tracking-widest mb-8">
+                        <div className="text-center text-xs uppercase tracking-tight mb-2">
                             <div>#1 MOST RECOMMENDED</div>
                             <div>CONTENT MARKETING AGENCY</div>
                         </div>
@@ -70,18 +70,18 @@ export default function Hero() {
                         </div>
 
                         {/* Main Headline */}
-                        <div className="text-center text-[6rem] md:text-[8rem] font-semibold">
+                        <div className="text-center text-[3.5em] lg:text-[5rem] xl:text-[8rem] font-medium mt-8">
                             <h1 className="leading-[0.92] tracking-tighter hero-text">
                                 We Create
                             </h1>
 
-                            <div className="flex items-center justify-center gap-6 mt-10 flex-wrap hero-text">
+                            <div className="flex items-end justify-center gap-4 mt-1 flex-wrap hero-text">
                                 <h1 className="leading-[0.92] tracking-tighter">
                                     Category
                                 </h1>
 
                                 {/* Embedded Image */}
-                                <div className="size-28 rounded-2xl overflow-hidden shadow-2xl -mt-6">
+                                <div className="size-14 lg:size-18 xl:size-28 rounded-2xl overflow-hidden shadow-2xl -mt-6">
                                     <img
                                         src={randomBg}
                                         alt="Category Leaders"
@@ -94,22 +94,21 @@ export default function Hero() {
                                 </h1>
                             </div>
 
-                            <p className="text-3xl md:text-4xl mt-4 text-center font-semibold">
+                            <p className="text-2xl mt-8 text-center font-semibold">
                                 on every searchable platform
                             </p>
                         </div>
+                    </div>
+                    {/* Bottom Content */}
+                    <div className="mt-20 flex justify-center md:justify-between flex-wrap gap-12 p-8">
+                        <div className="max-w-md max-md:hidden">
+                            Organic media planners creating, distributing &amp; optimising
+                            <span className="text-white"> search-first content</span> for SEO, Social, PR, Ai and LLM search
+                        </div>
 
-                        {/* Bottom Content */}
-                        <div className="mt-20 flex justify-between flex-wrap gap-12">
-                            <div className="max-w-md ">
-                                Organic media planners creating, distributing &amp; optimising
-                                <span className="text-white"> search-first content</span> for SEO, Social, PR, Ai and LLM search
-                            </div>
-
-                            <div>
-                                4 Global Offices serving<br />
-                                <span>UK, USA (New York) &amp; EU</span>
-                            </div>
+                        <div className="max-md:text-center">
+                            4 Global Offices serving<br />
+                            <span>UK, USA (New York) &amp; EU</span>
                         </div>
                     </div>
                 </div>
