@@ -85,16 +85,11 @@ export default function RiseAtSevenText() {
     return (
         <section
             ref={sectionRef}
-            className="relative h-[130vh] bg-black flex items-center justify-center overflow-hidden"
+            className="relative pt-10 pb-0 flex items-center justify-center overflow-hidden"
         >
             <div
                 ref={textRef}
-                className="text-white font-black tracking-[-0.05em] whitespace-nowrap select-none will-change-transform"
-                style={{
-                    fontSize: 'clamp(3.5rem, 13vw, 17rem)',
-                    fontFamily: 'Playfair Display, serif',
-                    lineHeight: 0.85,
-                }}
+                className="font-bold tracking-[-0.04em] whitespace-nowrap text-[11em]"
             >
                 Ready to Rise at Seven?
             </div>
