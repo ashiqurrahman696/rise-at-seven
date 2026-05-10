@@ -57,9 +57,9 @@ export default function Footer() {
                     <div className="grid lg:grid-cols-12 gap-y-16">
                         {/* Newsletter */}
                         <div className="lg:col-span-5">
-                            <h3 className="text-3xl font-semibold mb-6">Stay updated with Rise news</h3>
+                            <h3 className="text-2xl font-semibold mb-4">Stay updated with Rise news</h3>
 
-                            <form onSubmit={handleSubmit} className="relative max-w-md mb-8">
+                            <form onSubmit={handleSubmit} className="relative w-full lg:w-[300px] mb-4">
                                 <input
                                     type="email"
                                     value={email}
