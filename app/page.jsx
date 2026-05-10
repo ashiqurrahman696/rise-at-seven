@@ -65,7 +65,9 @@ export default function Home() {
       <ChasingConsumers />
       <LegacyInTheMaking />
       <WhatsNew />
-      <RiseAtSevenText />
+      <div className="max-lg:hidden">
+        <RiseAtSevenText />
+      </div>
       <Footer />
     </>
   );
