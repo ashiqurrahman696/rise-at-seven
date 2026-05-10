@@ -12,7 +12,7 @@ const clients = [
     { name: "HubSpot", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/HubSpot_Logo.svg/3840px-HubSpot_Logo.svg.png" },
     { name: "Xbox", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Xbox_one_logo.svg/250px-Xbox_one_logo.svg.png" },
     { name: "Sixt", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/Sixt_Logo_2023.svg/1280px-Sixt_Logo_2023.svg.png" },
-    { name: "Revolution Beauty London", logo: "https://theindustry.beauty/wp-content/uploads/2022/08/revolutionbeauty.jpg" },
+    { name: "Revolution Beauty London", logo: "https://panmureliberum.com/media/3102/logo.png" },
     { name: "PlayStation", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Playstation_logo_colour.svg/3840px-Playstation_logo_colour.svg.png" },
     { name: "Axa", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/AXA_Logo.svg/500px-AXA_Logo.svg.png?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=thumbnail" },
 ];
@@ -22,7 +22,7 @@ export default function TheAgencyBehind() {
         <section className="py-20">
             <div className="max-w-screen-2xl mx-auto">
                 <div className="flex max-md:flex-col md:items-center">
-                    <p className="px-3 py-2">The agency behind...</p>
+                    <p className="px-3 py-2 md:w-60 tracking-tighter">The agency behind...</p>
                     <Marquee pauseOnHover={false} speed={50}>
                         {clients.map((client, i) => <img key={i} src={client.logo} alt={client.name} className="h-10 mx-20" title={client.name} />)}
                     </Marquee>
