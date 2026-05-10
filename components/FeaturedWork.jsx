@@ -16,9 +16,9 @@ const WORKS = [
         tag: "Car Rental",
         img: "https://rise-atseven.transforms.svdcdn.com/production/images/Logos/Client/Black/sixt-1.jpg?w=1600&h=1200&q=80&fm=webp&fit=crop&crop=focalpoint&fp-x=0.5&fp-y=0.5&dm=1750847611&s=b5b3d324e0455061c60fe917b85d106c",
         year: "[2023-2025]",
-        hoverColor: "#f39c12",
+        hoverColor: "#CB7B3A",
         hoverText: "An extra 3m clicks regionally through SEO",
-        badgeColor: "#A7F3D0",
+        badgeColor: "#b0f3e0",
     },
     {
         id: 2,
@@ -26,9 +26,9 @@ const WORKS = [
         tag: "Card Machines",
         img: "https://rise-atseven.transforms.svdcdn.com/production/images/dojo-go-product-shot-1.jpg?w=1600&h=1200&q=80&fm=webp&fit=crop&crop=focalpoint&fp-x=0.5&fp-y=0.5&dm=1750847714&s=22e15e8ff19558f300183bc7ebc1b0ff",
         year: "[2021-2025]",
-        hoverColor: "#fab1a0",
+        hoverColor: "#FDD8C4",
         hoverText: "A B2B success story for Dojo card machine",
-        badgeColor: "#A7F3D0",
+        badgeColor: "#b0f3e0",
     },
     {
         id: 3,
@@ -41,9 +41,9 @@ const WORKS = [
         ),
         img: "https://rise-atseven.transforms.svdcdn.com/production/images/Screenshot-2026-02-07-at-17.01.43.png?w=1600&h=1200&q=80&fm=webp&fit=crop&crop=focalpoint&fp-x=0.5&fp-y=0.5&dm=1770483725&s=f1d98712e630df66aaf9b713ce70db2d",
         year: "[2023-2024]",
-        hoverColor: "#a29bfe",
+        hoverColor: "#D8C4FD",
         hoverText: "A full service SEO success story 170% + increase.",
-        badgeColor: "#A7F3D0",
+        badgeColor: "#b0f3e0",
     },
     {
         id: 4,
@@ -56,9 +56,9 @@ const WORKS = [
         tag: "Esims",
         img: "https://rise-atseven.transforms.svdcdn.com/production/images/eSIM-Europe-p1-what-is-eSIM-2-1.jpg?w=1600&h=1200&q=80&fm=webp&fit=crop&crop=focalpoint&fp-x=0.5&fp-y=0.5&dm=1761234573&s=9ef283005801f5f7607377f62cc54be8",
         year: "[2023-2025]",
-        hoverColor: "#f39c12",
+        hoverColor: "#CB7B3A",
         hoverText: "Increasing brand and non brand visibility UK/ES",
-        badgeColor: "#A7F3D0",
+        badgeColor: "#b0f3e0",
     },
     {
         id: 5,
@@ -66,9 +66,9 @@ const WORKS = [
         tag: "Trainers",
         img: "https://rise-atseven.transforms.svdcdn.com/production/images/maxresdefault_2025-10-22-141838_nmnu.jpg?w=1600&h=1200&q=80&fm=webp&fit=crop&crop=focalpoint&fp-x=0.5&fp-y=0.5&dm=1761142718&s=19d31221b717bb829b65ed531322d432",
         year: "[2025]",
-        hoverColor: "#74b9ff",
+        hoverColor: "#3A8CCB",
         hoverText: "65% up YoY in clicks for JDSports, FR, IT, ES",
-        badgeColor: "#A7F3D0",
+        badgeColor: "#b0f3e0",
     },
     {
         id: 6,
@@ -76,9 +76,9 @@ const WORKS = [
         tag: "Easter Breaks",
         img: "https://rise-atseven.transforms.svdcdn.com/production/images/easter-breaks.jpg?w=1600&h=1200&q=80&fm=webp&fit=crop&crop=focalpoint&fp-x=0.5&fp-y=0.5&dm=1750847715&s=e29b3435cbe0e68f30856e79714a50f3",
         year: "[2019-2025]",
-        hoverColor: "#f3a683",
+        hoverColor: "#D2B59D",
         hoverText: "Dominating google and AI search",
-        badgeColor: "#A7F3D0",
+        badgeColor: "#b0f3e0",
     },
     {
         id: 7,
@@ -86,9 +86,9 @@ const WORKS = [
         tag: "Rechargeable Lights",
         img: "https://rise-atseven.transforms.svdcdn.com/production/images/Pooky-Rechargable-Doorstop-Cordless-100-Straight-Empire-Pendant-Silk-Ikat-Shade-in-Black-and-Cream-Atlas-44-Single-chukka-Cordless-95-scaled-1-1.jpg?w=1600&h=1200&q=80&fm=webp&fit=crop&crop=focalpoint&fp-x=0.5&fp-y=0.5&dm=1750847623&s=5e3e3b48f331495fa309422c715b5b6d",
         year: "[2025]",
-        hoverColor: "#00cec9",
+        hoverColor: "#39B0BD",
         hoverText: "Driving Demand for Pooky Rechargeable Lights",
-        badgeColor: "#A7F3D0",
+        badgeColor: "#b0f3e0",
     },
     {
         id: 8,
@@ -96,9 +96,9 @@ const WORKS = [
         tag: "UK holidays",
         img: "https://rise-atseven.transforms.svdcdn.com/production/images/1.JPG?w=1600&h=1200&q=80&fm=webp&fit=crop&crop=focalpoint&fp-x=0.5&fp-y=0.5&dm=1751183703&s=3c150315749c6ae2cd242ca0763932c7",
         year: "[2019-2025]",
-        hoverColor: "#a29bfe",
+        hoverColor: "#D29DD0",
         hoverText: "Social search and multi talent content #1.",
-        badgeColor: "#A7F3D0",
+        badgeColor: "#b0f3e0",
     },
     {
         id: 9,
@@ -106,9 +106,9 @@ const WORKS = [
         tag: "Beauty Dupes",
         img: "https://rise-atseven.transforms.svdcdn.com/production/images/Screenshot-2025-06-10-at-12.13.46.png?w=1600&h=1200&q=80&fm=webp&fit=crop&crop=focalpoint&fp-x=0.5&fp-y=0.5&dm=1750847624&s=66887254ebb0061e76bd4843483830d5",
         year: "[2022-2025]",
-        hoverColor: "#fab1a0",
+        hoverColor: "#FECACC",
         hoverText: "Building the UK's beauty dupe brand.",
-        badgeColor: "#A7F3D0",
+        badgeColor: "#b0f3e0",
     },
     {
         id: 10,
@@ -116,9 +116,9 @@ const WORKS = [
         tag: "STI tests",
         img: "https://rise-atseven.transforms.svdcdn.com/production/images/Screenshot-2025-07-04-at-12.50.54.png?w=1600&h=1200&q=80&fm=webp&fit=crop&crop=focalpoint&fp-x=0.5&fp-y=0.5&dm=1751629865&s=ca93939dbf531401a1b3805445611f1c",
         year: "[2022-2023]",
-        hoverColor: "#74b9ff",
+        hoverColor: "#60DCFB",
         hoverText: "Driving category leadership for STI tests.",
-        badgeColor: "#A7F3D0",
+        badgeColor: "#b0f3e0",
     },
     {
         id: 11,
@@ -126,9 +126,9 @@ const WORKS = [
         tag: "Outfits",
         img: "https://rise-atseven.transforms.svdcdn.com/production/images/Screenshot-2025-06-23-at-14.43.56.png?w=1600&h=1200&q=80&fm=webp&fit=crop&crop=focalpoint&fp-x=0.5&fp-y=0.5&dm=1750847626&s=95854cccfcf8440a9dffe2897976126a",
         year: "[2021-2023]",
-        hoverColor: "#ffb8b8",
+        hoverColor: "#FECACC",
         hoverText: 'Driving discovery everything for "outfits" PLT',
-        badgeColor: "#A7F3D0",
+        badgeColor: "#b0f3e0",
     },
 ];
 
@@ -222,7 +222,7 @@ const FeaturedWork = () => {
                                                 style={{ backgroundColor: work.hoverColor }}
                                             >
                                                 <motion.div
-                                                    className="pointer-events-none absolute z-[100] flex items-center justify-center w-16 h-16 rounded-full bg-[#A7F3D0] text-black"
+                                                    className="pointer-events-none absolute z-[100] flex items-center justify-center w-16 h-16 rounded-full bg-[#b0f3e0] text-black"
                                                     style={{
                                                         left: mousePos.x,
                                                         top: mousePos.y,
@@ -328,7 +328,7 @@ const FeaturedWork = () => {
                                                         style={{ backgroundColor: work.hoverColor }}
                                                     >
                                                         <motion.div
-                                                            className="pointer-events-none absolute z-[100] flex items-center justify-center w-24 h-24 rounded-full bg-[#A7F3D0] text-black"
+                                                            className="pointer-events-none absolute z-[100] flex items-center justify-center w-24 h-24 rounded-full bg-[#b0f3e0] text-black"
                                                             style={{
                                                                 left: mousePos.x,
                                                                 top: mousePos.y,
