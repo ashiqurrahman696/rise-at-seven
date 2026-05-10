@@ -12,8 +12,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: 'Rise at Seven | Search-First Content Marketing Agency',
-  description: 'Organic media planners creating category leaders.',
+  title: 'Rise at Seven | Award Winning Search-First Content Marketing Agency',
+  description: 'Rise at Seven is a search-first content marketing agency with offices in London, Sheffield, Manchester &amp; New York that specialises in SEO, Digital PR,…',
 };
 
 export default function RootLayout({ children }) {
